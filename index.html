@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090914">
+  <meta name="description" content="MindMate AI Studio — Your creative universe for AI stories, characters, images and animation.">
+  <title>MindMate AI Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="brand" data-page="home">
+        <span class="brand-icon">M</span>
+        <span>MindMate <small>AI STUDIO</small></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+
+      <nav class="navigation">
+        <button class="nav-item active" data-page="home">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="create">✦ <span>AI Creator</span></button>
+        <button class="nav-item" data-page="projects">▤ <span>My Projects</span></button>
+        <button class="nav-item" data-page="characters">♙ <span>Characters</span></button>
+        <button class="nav-item" data-page="stories">▧ <span>Story Studio</span></button>
+      </nav>
+
+      <div class="workspace-label">ACCOUNT</div>
+
+      <nav class="navigation">
+        <button class="nav-item" data-page="credits">✧ <span>Credits & Plans</span></button>
+        <button class="nav-item" data-page="profile">◎ <span>My Profile</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <span class="upgrade-icon">✦</span>
+          <h3>Unlock your imagination</h3>
+          <p>Get more credits and explore your creativity.</p>
+          <button class="primary-button full-width" data-page="credits">Explore plans</button>
+        </div>
+        <div class="account-mini">
+          <div class="avatar">M</div>
+          <div><strong id="sidebarName">Creator</strong><small>Free account</small></div>
+          <button class="icon-button" data-page="profile" aria-label="Profile settings">⚙</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">MindMate <span>/</span> <strong id="currentSection">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <button class="credits-pill" data-page="credits">✦ <span id="creditCount">20</span> credits</button>
+          <button class="avatar top-avatar" data-page="profile" aria-label="Open profile">M</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="page active" id="page-home">
+          <div class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="status-dot"></span> YOUR CREATIVE UNIVERSE</div>
+              <h1>Imagine more.<br><span class="gradient-text">Create anything.</span></h1>
+              <p class="muted welcome-text">Bring your ideas to life with your AI creative workspace.</p>
+            </div>
+            <div class="welcome-decoration">✳</div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <span class="tag">✦ MINDMATE AI STUDIO</span>
+              <h2>Your next big idea<br>starts right here.</h2>
+              <p>Create concepts for stunning visuals, animated stories and unforgettable characters.</p>
+              <button class="primary-button" data-page="create">Start creating <span>↗</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="art-core">✳</div>
+              <div class="floating-card card-one">✦ <span>Imagine</span></div>
+              <div class="floating-card card-two">◈ <span>Create</span></div>
+              <div class="floating-card card-three">✧ <span>Inspire</span></div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div><h2>Creative tools</h2><p>Choose your next creation.</p></div>
+            <button class="text-button" data-page="create">View all ↗</button>
+          </div>
+
+          <div class="tool-grid">
+            <button class="tool-card" data-tool="image">
+              <span class="tool-icon purple">▧</span><span class="tool-arrow">↗</span>
+              <h3>AI Image</h3><p>Turn words into visual concepts.</p><span class="tool-link">Explore tool →</span>
+            </button>
+            <button class="tool-card" data-tool="animation">
+              <span class="tool-icon blue">▶</span><span class="tool-arrow">↗</span>
+              <h3>AI Animation</h3><p>Plan moving scenes and videos.</p><span class="tool-link">Explore tool →</span>
+            </button>
+            <button class="tool-card" data-tool="character">
+              <span class="tool-icon pink">♙</span><span class="tool-arrow">↗</span>
+              <h3>AI Characters</h3><p>Develop original characters.</p><span class="tool-link">Explore tool →</span>
+            </button>
+            <button class="tool-card" data-tool="story">
+              <span class="tool-icon gold">▤</span><span class="tool-arrow">↗</span>
+              <h3>AI Story</h3><p>Shape your next great story.</p><span class="tool-link">Explore tool →</span>
+            </button>
+          </div>
+
+          <div class="section-heading project-heading">
+            <div><h2>Recent projects</h2><p>Your saved creative work.</p></div>
+            <button class="text-button" data-page="projects">View projects →</button>
+          </div>
+          <div id="recentProjects" class="project-grid"></div>
+        </section>
+
+        <section class="page" id="page-create">
+          <div class="page-heading">
+            <div><div class="eyebrow">CREATIVE WORKSPACE</div><h1>AI Creator</h1><p class="muted">Describe your vision and prepare your next creation.</p></div>
+          </div>
+
+          <div class="creator-layout">
+            <div class="panel creator-panel">
+              <label class="field-label">Choose a creation type</label>
+              <div class="type-grid">
+                <button class="type-option selected" data-type="image">▧<span>Image</span></button>
+                <button class="type-option" data-type="animation">▶<span>Animation</span></button>
+                <button class="type-option" data-type="character">♙<span>Character</span></button>
+                <button class="type-option" data-type="story">▤<span>Story</span></button>
+              </div>
+
+              <label class="field-label" for="projectTitle">Project name</label>
+              <input id="projectTitle" class="input" maxlength="100" placeholder="Give your project a name">
+
+              <label class="field-label" for="prompt">Describe your idea</label>
+              <textarea id="prompt" class="input textarea" maxlength="3000" placeholder="Describe what you want to create in detail..."></textarea>
+              <div class="input-footer"><span>Be descriptive for better results.</span><span id="charCount">0 / 3000</span></div>
+
+              <label class="field-label" for="styleSelect">Creative style</label>
+              <select id="styleSelect" class="input">
+                <option>Cinematic</option>
+                <option>3D Cartoon</option>
+                <option>Photorealistic</option>
+                <option>Anime</option>
+                <option>Fantasy</option>
+                <option>Minimalist</option>
+                <option>Watercolor</option>
+              </select>
+
+              <label class="field-label" for="aspectSelect">Aspect ratio</label>
+              <select id="aspectSelect" class="input">
+                <option value="1:1">Square — 1:1</option>
+                <option value="9:16">Portrait — 9:16</option>
+                <option value="16:9">Landscape — 16:9</option>
+                <option value="4:5">Social portrait — 4:5</option>
+              </select>
+
+              <button class="primary-button full-width generate-button" id="generateButton">✦ Prepare creation <span>→</span></button>
+              <p class="fine-print">This starter version saves creative briefs. Real AI generation will become available after a compatible AI provider is connected.</p>
+            </div>
+
+            <div class="panel preview-panel">
+              <div class="preview-top"><h3>Preview workspace</h3><span class="preview-status">READY</span></div>
+              <div class="preview-canvas" id="previewCanvas">
+                <div class="preview-symbol">✳</div>
+                <h3>Your idea starts here</h3>
+                <p>Your saved creative brief will appear in this workspace.</p>
+              </div>
+              <div class="preview-details"><span>Creation type</span><strong id="previewType">AI Image</strong></div>
+              <div class="preview-details"><span>Style</span><strong id="previewStyle">Cinematic</strong></div>
+              <div class="preview-details"><span>Aspect ratio</span><strong id="previewAspect">1:1</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-projects">
+          <div class="page-heading"><div><div class="eyebrow">YOUR WORK</div><h1>My Projects</h1><p class="muted">Manage your saved creative briefs.</p></div><button class="primary-button" data-page="create">+ New project</button></div>
+          <input class="input search-input" id="projectSearch" placeholder="⌕  Search your projects...">
+          <div id="allProjects" class="project-grid"></div>
+        </section>
+
+        <section class="page" id="page-characters">
+          <div class="page-heading"><div><div class="eyebrow">CHARACTER WORKSHOP</div><h1>Characters</h1><p class="muted">Develop consistent personalities and character concepts.</p></div></div>
+          <div class="panel empty-state"><div class="empty-icon">♙</div><h2>Your characters begin with an idea.</h2><p>Create a character brief and save its description to your projects.</p><button class="primary-button" data-tool="character">Create a character →</button></div>
+        </section>
+
+        <section class="page" id="page-stories">
+          <div class="page-heading"><div><div class="eyebrow">STORYTELLING WORKSHOP</div><h1>Story Studio</h1><p class="muted">Build story concepts, scripts and scene outlines.</p></div></div>
+          <div class="panel empty-state"><div class="empty-icon">▤</div><h2>Every great story starts somewhere.</h2><p>Describe your plot, characters and setting in the AI Creator.</p><button class="primary-button" data-tool="story">Write a story brief →</button></div>
+        </section>
+
+        <section class="page" id="page-credits">
+          <div class="page-heading"><div><div class="eyebrow">YOUR MEMBERSHIP</div><h1>Credits & Plans</h1><p class="muted">Explore membership options for your creative journey.</p></div></div>
+          <div class="balance-card"><span>YOUR STARTER BALANCE</span><div><strong id="bigCreditCount">20</strong> <span>credits</span></div><p>This starter balance is stored locally in this browser and is not a real paid account balance.</p></div>
+          <div class="plan-grid">
+            <div class="panel plan-card"><span class="plan-label">STARTER</span><h2>Free</h2><p class="plan-price">₦0 <small>/ forever</small></p><ul><li>Starter workspace</li><li>Save creative briefs</li><li>Explore creator tools</li></ul><button class="secondary-button full-width" disabled>Current demo plan</button></div>
+            <div class="panel plan-card featured-plan"><span class="plan-label">FOR CREATORS</span><h2>Pro</h2><p class="plan-price">Coming soon</p><ul><li>Planned monthly credits</li><li>Expanded project storage</li><li>AI provider integrations</li></ul><button class="primary-button full-width" id="notifyPlanButton">Notify me</button></div>
+            <div class="panel plan-card"><span class="plan-label">FLEXIBLE</span><h2>Credit packs</h2><p class="plan-price">Coming soon</p><ul><li>Planned extra credits</li><li>Flexible usage</li><li>Secure checkout</li></ul><button class="secondary-button full-width" id="notifyCreditsButton">Notify me</button></div>
+          </div>
+          <p class="fine-print">Payments and subscriptions are not active in this starter version. Flutterwave must be integrated and tested on a secure backend before purchases can be accepted.</p>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-heading"><div><div class="eyebrow">ACCOUNT SETTINGS</div><h1>My Profile</h1><p class="muted">Personalize your local workspace.</p></div></div>
+          <div class="panel profile-panel">
+            <div class="profile-avatar">M</div>
+            <label class="field-label" for="displayName">Display name</label>
+            <input id="displayName" class="input" maxlength="60" placeholder="Your creator name">
+            <label class="field-label" for="displayEmail">Email address</label>
+            <input id="displayEmail" class="input" type="email" maxlength="254" placeholder="you@example.com">
+            <button class="primary-button" id="saveProfileButton">Save preferences</button>
+            <p class="fine-print">These are local profile preferences, not a secure user account. Online registration and login will be added with the backend.</p>
+          </div>
+        </section>
+
+        <footer class="footer"><span>✳ MindMate AI Studio</span><span>Imagine without limits.</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+    </html>
